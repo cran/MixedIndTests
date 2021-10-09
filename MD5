@@ -1,4 +1,4 @@
-c2e7cdf852ed1bec49e991b5cc0fdb34 *DESCRIPTION
+2a52401e5dd1f4df2035dac011ff519e *DESCRIPTION
 ed91b78b370942d0f2a51cf3b2751d18 *NAMESPACE
 36b45abbef1586893ba64b079f2b7f49 *R/AutoDep.R
 e1da80e93f21f9eb49f737b49ad61c8a *R/Dependogram.R
@@ -8,8 +8,8 @@ e7a849f4a830af93167685689fbd54f4 *R/SimAR1Poisson.R
 2670c1d59c7df990a0b16c879bd6185b *R/Sn_A.R
 5d5e453256a6ad5a99470b6cb2d10d1a *R/Sn_Aserial.R
 edea84216d1e93128bd31d2faaafc081 *R/Sn_serial.R
-bc21d99d1dd03999b353d70a4496818d *R/TestIndCopula.R
-421f5385cf0a8759b119b3b304f5ac6a *R/TestIndSerCopula.R
+d9f5e7b8b158d292cc80268f219ad4f3 *R/TestIndCopula.R
+54fa30f21453b5cef7fc28c1e8bbedb5 *R/TestIndSerCopula.R
 f2b3c54d3c34c122a1de5cc9e2236bda *R/bootstrap.R
 5f0c984c8ffb8b321a9cd68e9ab1aafd *R/preparedata.R
 1bae63dfb5e37dad5d15bf091c0b8f85 *R/stat_dep.R

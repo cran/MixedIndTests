@@ -196,9 +196,15 @@ TestIndSerCopula =function(x,p,trunc.level=2,B=1000,par=FALSE,ncores=2,graph=FAL
 #######################################################
   ind = sort(cardA,index.return=TRUE)
   card = ind$x
+  Asets = out0$Asets
+  AA = matrix(Asets,ncol=p)
+  if(cA==1)
+  {
+    A=AA
+  }else{
+    A=AA[ind$ix,]
+  }
 
-
-  A=Asets[ind$ix,]
   stats.cvm = cvm[ind$ix]
   pval.cvm = pvalcvm[ind$ix]
 

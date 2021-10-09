@@ -25,7 +25,7 @@
 
 TestIndCopula =function(x,trunc.level=2,B=1000,par=FALSE,ncores=2,graph=FALSE){
 
-
+ if(is.data.frame(x)){x=as.matrix(x)}
  # start_time <- Sys.time()
 
   dim0 <- dim(x)
@@ -142,7 +142,13 @@ TestIndCopula =function(x,trunc.level=2,B=1000,par=FALSE,ncores=2,graph=FALSE){
   card = ind$x
   Asets = out0$Asets
   AA = matrix(Asets,ncol=d)
-  A=AA[ind$ix,]
+  if(m==1)
+  {
+    A=AA
+  }else{
+    A=AA[ind$ix,]
+    }
+
   stats.cvm = cvm[ind$ix]
   pval.cvm = pvalcvm[ind$ix]
   lim = 1e-20*rep(1,m)

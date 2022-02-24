@@ -2,7 +2,7 @@
 % Please edit documentation in R/TestIndSerCopula.R
 \name{TestIndSerCopula}
 \alias{TestIndSerCopula}
-\title{Statistics for a test of randomness for a time series}
+\title{Statistics and P-values for a test of randomness for a univariate time series}
 \usage{
 TestIndSerCopula(
   x,
@@ -38,5 +38,5 @@ TestIndSerCopula(
 This function computes Cramer-von Mises statistics from the multilinear copula and their combination for a tests of randomness for p consectives values X(1), ..., X(p). The p-values are computed using Gaussian multipliers.
 }
 \references{
-B.R Nasri (2021). Test of serial dependence for arbitrary distributions
+B.R Nasri (2022). Tests of serial dependence for arbitrary distributions
 }

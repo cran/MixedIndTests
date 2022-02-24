@@ -1,4 +1,4 @@
-#'@title Kendall's tau and Spearman's rho statistics for testing independence between random variables
+#'@title Kendall's tau and Spearman's rho statistics  for testing independence between random variables
 #'
 #'@description This function computes the matrix of pairs of Kendall's tau and Spearman's rho statistics between random variables with arbitrary distributions.
 #'
@@ -6,10 +6,10 @@
 #'@param graph       Set to TRUE for a dependogram for all pairs of Kendall's taus and Spearman's rhos.
 #
 #'
-#'@return \item{stat}{List of Cramer-von Mises statistics cvm, Sn  from the multilinear copula, and test combinations Tn and Tn2}
-#'@return \item{pvalue}{Approximated P-values for the tests using Gaussian multipliers}
+#'@return \item{stat}{List of Kendall's tau and Spearman's rho statistics from multilinear copula, and test combinations LB}
+#'@return \item{pvalue}{P-values for the tests statistics}
 #'
-#'@references Genest, Neslehova, Remillard & Murphy (2018). Test for independence in arbitrary distributions
+#'@references Genest, Neslehova, Remillard & Murphy (2018). Testing for independence in arbitrary distributions
 #'
 #'@examples
 #'x <- matrix(rnorm(500),ncol=10)

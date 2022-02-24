@@ -1,4 +1,4 @@
-#'@title Kendall's tau and Spearman's rho statistics for testing randomness in a time series
+#'@title Kendall's tau and Spearman's rho statistics for testing randomness in a univariate time series
 #'
 #'@description This function computes  Kendall's tau and Spearman's rho statistics for tests of randomness in a time series with arbitrary distribution for pairs (X[i],X[i+k]), k=1:lags
 #'
@@ -8,9 +8,9 @@
 #'
 #'
 #'@return \item{stat}{List of Kendall's tau and Spearman's rho statistics from multilinear copula, and test combinations LB}
-#'@return \item{pvalue}{Approximated P-values for the tests using Gaussian multipliers}
+#'@return \item{pvalue}{ P-values for the tests statistics}
 #'
-#'@references B.R Nasri (2021). Test of serial dependence for arbitrary distributions
+#'@references B.R Nasri (2022). Tests of serial dependence for arbitrary distributions
 #'
 #'@examples
 #'out <-EstDepSerial(SimAR1Poisson(c(5,0.4),100),10)

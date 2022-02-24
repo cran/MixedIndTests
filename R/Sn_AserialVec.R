@@ -1,8 +1,8 @@
 #'@title Computes the Moebius Cramer-von Mises statistics for the test of randomness
 #'
-#'@description This function he Moebius Cramer-von Mises statistics for a tests of randomness for observations X(1), ...l, X(p).
+#'@description This function he Moebius Cramer-von Mises statistics for a tests of randomness for random vectors Y(1), ...l, X(p).
 #'
-#'@param x            Time series.
+#'@param Y            Time series.
 #'@param p            Number of consecutive observations for the test.
 #'@param trunc.level  Only subsets of cardinality <= trunc.level (default=2) are considered for the Moebius statistics.
 #
@@ -19,8 +19,8 @@
 #'
 
 #'#'@examples
-#'X <- SimAR1Poisson(c(5,0.2),100)
-#'out <- Sn_Aserial(X,5,3)
+#'Y <- data(Y)
+#'out <- Sn_Aserial(Y,5,2)
 
 #'@keywords internal
 #'
@@ -28,14 +28,17 @@
 #'
 #'
 
-Sn_Aserial = function(x,p,trunc.level){
+Sn_AserialVec = function(Y,p,trunc.level=2){
   v = c(1:(trunc.level-1))
   cA = sum(choose((p-1),v))
-  n = length(x)
+  dd = dim(Y)
+  n = dd[1]
+  d = dd[2]
 
-  out0 = .C("stats_serial",
-            as.double(x),
+  out0 = .C("stats_serialVectors",
+            as.double(Y),
             as.integer(n),
+            as.integer(d),
             as.integer(p),
             as.integer(trunc.level),
             stats = double(cA),

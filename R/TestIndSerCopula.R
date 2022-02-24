@@ -1,4 +1,4 @@
-#'@title Statistics for a test of randomness for a time series
+#'@title Statistics and P-values for a test of randomness for a univariate time series
 #'
 #'@description This function computes Cramer-von Mises statistics from the multilinear copula and their combination for a tests of randomness for p consectives values X(1), ..., X(p). The p-values are computed using Gaussian multipliers.
 #'
@@ -14,7 +14,7 @@
 #'@return \item{stat}{List of Cramer-von Mises statistics cvm, Sn, and test combinations Tn and Tn2 (only pairs)}
 #'@return \item{pvalue}{Approximated P-values for the tests using Gaussian multipliers}
 #'
-#'@references B.R Nasri (2021). Test of serial dependence for arbitrary distributions
+#'@references B.R Nasri (2022). Tests of serial dependence for arbitrary distributions
 #'
 #'@importFrom foreach %dopar%
 #'@import doParallel

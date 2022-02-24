@@ -9,7 +9,7 @@
 #'
 #'@return \item{stats}{Cramer-von Mises statistics Sn}
 #'
-#'@references B.R Nasri (2021). Test of serial dependence for arbitrary distributions
+#'@references B.R Nasri (2022). Tests of serial dependence for arbitrary distributions
 #'
 
 #'#'@examples

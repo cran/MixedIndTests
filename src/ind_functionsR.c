@@ -2244,10 +2244,10 @@ Amatserial(A, cardA, p[0], p);
 
    }
 
-    void stats_serialVectors(double *x, int *n, int *d, int *p, int *trunc, double *stat, double *cardA, double *M, double *Asets, double *sn, double *J)
+        void stats_serialVectors(double *x, int *n, int *d, int *p, int *trunc, double *stat, double *cardA, double *M, double *Asets, double *sn, double *J)
 {
-
-
+     
+      
      int n2, *m,*mm;
      double **X, **x2, **y, **values, *I4temp, *I1temp, *I1pointtemp, *I4, *I1, *I1point, *D00;
      int i,j,k,l;
@@ -2261,47 +2261,47 @@ Amatserial(A, cardA, p[0], p);
      D00    = calloc(1,sizeof(double));
 
      for(k=0;k<d[0];k++)
-      {
+      { 
           X[k]      = calloc(n[0],sizeof(double));
           values[k] = calloc(n[0],sizeof(double));
           x2[k]     = calloc(n[0]*2,sizeof(double));
           y[k]      = calloc(n[0],sizeof(double));
       }
 
-
+   
 
       l=0;
       for(k=0;k<d[0];k++)
       {
          for(i=0;i<n[0];i++)
-         {
+         { 
             X[k][i]= x[l];
             l++;
          }
       }
-
-
-
+      
+     
+    
      m      =  calloc(d[0],sizeof(int));
      mm     =  calloc(1,sizeof(int));
 
-
+          
      for(k=0;k<d[0];k++)
-     {
+     { 
          unique(X[k],n,values[k],mm);
          m[k] = mm[0];
-
+                
      }
 
-
-
+     
+     
     I4temp       = calloc(n2,sizeof(double));
     I1pointtemp  = calloc(n[0],sizeof(double));
     I1temp       = calloc(n2,sizeof(double));
     I4           = calloc(n2*p[0],sizeof(double));
     I1point      = calloc(n[0]*p[0],sizeof(double));
     I1           = calloc(n2*p[0], sizeof(double));
-
+        
 
     for(k=0;k<d[0];k++)
      {
@@ -2311,22 +2311,23 @@ Amatserial(A, cardA, p[0], p);
           x2[k][i+n[0]] = X[k][i];
         }
      }
-
+     
+    
 
  for(j=0;j<p[0];j++)
      {
        for(i=0;i<n[0];i++)
          {
            for(k=0;k<d[0];k++)
-            {
+            { 
                 y[k][i] = x2[k][n[0]+i-j];
             }
          }
-
-
+         
+         
          IfunVectors(y, n, d, values, m, I1temp, I1pointtemp, I4temp,D00);
-
-
+         
+          
 
         for(i=0;i<n2;i++)
          {
@@ -2338,27 +2339,27 @@ Amatserial(A, cardA, p[0], p);
          {
              I1point[j*n[0]+i] = I1pointtemp[i];
          }
-
+        
      }
 
-
+     
      Sn_serialVectors(I4,I1,I1point,D00,n,p,sn,J);
-
+    
      Sn_A_serialvec(I4, n, p, trunc, stat, cardA, M, Asets);
 
 
-
+ 
 
        free(m); free(mm);
-       free(I1); free(I4);  free(I1point);
+       free(I1); free(I4);  free(I1point); 
        free(I1temp); free(I4temp); free(I1pointtemp); free(D00);
-
+       
        for(k=0;k<d[0];k++)
-         {
+         { 
          free(X[k]); free(values[k]); free(x2[k]); free(y[k]);
          }
        free(values); free(X); free(x2); free(y);
-
+      
 }
 
 

@@ -18,7 +18,7 @@ Sn_serial(x, p)
 This function computes the Cramer-von Mises statistic for a tests of randomness for p consectives values X(1), ..., X(p). Usefull for traditionall bootstrapping.
 }
 \references{
-B.R Nasri (2021). Test of serial dependence for arbitrary distributions
+B.R Nasri (2022). Tests of serial dependence for arbitrary distributions
 
 #'@examples
 X <- SimAR1Poisson(c(5,0.2),100)

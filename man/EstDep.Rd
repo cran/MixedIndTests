@@ -2,7 +2,7 @@
 % Please edit documentation in R/EstDep.R
 \name{EstDep}
 \alias{EstDep}
-\title{Kendall's tau and Spearman's rho statistics for testing independence between random variables}
+\title{Kendall's tau and Spearman's rho statistics  for testing independence between random variables}
 \usage{
 EstDep(x, graph = FALSE)
 }
@@ -12,9 +12,9 @@ EstDep(x, graph = FALSE)
 \item{graph}{Set to TRUE for a dependogram for all pairs of Kendall's taus and Spearman's rhos.}
 }
 \value{
-\item{stat}{List of Cramer-von Mises statistics cvm, Sn  from the multilinear copula, and test combinations Tn and Tn2}
+\item{stat}{List of Kendall's tau and Spearman's rho statistics from multilinear copula, and test combinations LB}
 
-\item{pvalue}{Approximated P-values for the tests using Gaussian multipliers}
+\item{pvalue}{P-values for the tests statistics}
 }
 \description{
 This function computes the matrix of pairs of Kendall's tau and Spearman's rho statistics between random variables with arbitrary distributions.
@@ -24,5 +24,5 @@ x <- matrix(rnorm(500),ncol=10)
 out <-EstDep(x)
 }
 \references{
-Genest, Neslehova, Remillard & Murphy (2018). Test for independence in arbitrary distributions
+Genest, Neslehova, Remillard & Murphy (2018). Testing for independence in arbitrary distributions
 }

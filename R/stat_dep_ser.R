@@ -2,14 +2,14 @@
 #'
 #'@description This function Computes the Kendall's taus and Spearman's rho for tests of randomness.
 #'
-#'@param x          time series
-#'@param lag        number of lags.
+#'@param x          Time series
+#'@param lag        Number of lags.
 #
 #'
 #'@return \item{tau}{Kendall's taus for lags 1:lag}
 #'@return \item{rho}{Spearman's rhos for lags 1:lag}
 #'
-#'@references B.R Nasri (2021). Test of serial dependence for arbitrary distributions
+#'@references B.R Nasri (2021). Tests of serial dependence for arbitrary distributions
 #'
 #'@examples
 #' X <- SimAR1Poisson(c(5,0.2),100)

@@ -1,17 +1,17 @@
-#'@title Computes the Cramer-von Mises statistic Sn for the test of randomness
+#'@title Computes unique values, cdf and pdf
 #'
-#'@description This function computes the Cramer-von Mises statistic for a tests of randomness for p consectives values X(1), ..., X(p). Usefull for traditionall bootstrapping.
+#'@description This function computes the unique values, cdf and pdf for a series of data.
 #'
 #'@param x        Vector
 #
 #'
 #'
 #'@return \item{values}{Unique (sorted) values}
-#'@return \item{m}{Unique (sorted) values}
-#'@return \item{Fn}{Empirical cdf of the values}
-#'@return \item{fn}{Empirical pdf of the values}
+#'@return \item{m}{Number of unique values}
+#'@return \item{Fn}{Empirical cdf of the unique values}
+#'@return \item{fn}{Empirical pdf of the unique values}
 #'
-#'@references B.R Nasri (2021). Test of serial dependence for arbitrary distributions
+#'@references B.R Nasri (2021). Tests of serial dependence for arbitrary distributions
 #'@references C. Genest, J.G. Neslehova, B.N. Remillard and O. Murphy (2019). Testing for independence in arbitrary distributions.
 #'
 

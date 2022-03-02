@@ -1,13 +1,13 @@
 #'@title Computes the Kendall's taus and Spearman's rho for tests of randomness
 #'
 #'@description This function Computes the Kendall's taus and Spearman's rho for tests of independence used in EstDep
-#'@param x          vector of length n
-#'@param y          vector of length n
+#'@param x     Vector of length n
+#'@param y     Vector of length n
 #'
 #'
 #'@return \item{tau}{Kendall's taus for lags 1:lag}
 #'@return \item{rho}{Spearman's rhos for lags 1:lag}
-#'@return \item{s2}{estimated variance of Spearman's rho}
+#'@return \item{s2}{Estimated variance of Spearman's rho}
 #'
 #'@references Genest, Neslehova, & Remillard (2017). Asymptotic behavior of the empirical multilinear copula process under broad conditions
 #'

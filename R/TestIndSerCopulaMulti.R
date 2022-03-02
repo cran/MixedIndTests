@@ -2,11 +2,11 @@
 #'
 #'@description This function computes Cramer-von Mises statistics from the multilinear copula and their combination for a tests of randomness for p consecutives values of random vectors X(1), ..., X(p). The p-values are computed using Gaussian multipliers.
 #'
-#'@param x        Time series matrix
-#'@param p        Number of consecutive vectors
+#'@param x            Time series matrix
+#'@param p            Number of consecutive vectors
 #'@param trunc.level  Only subsets of cardinality <= trunc.level (default=2) are considered for the Moebius statistics.
-#'@param B        Number of multipliers samples (default = 1000)
-#'@param graph    Set to TRUE if one wants the dependogram of P-values for the Moebius statistics
+#'@param B            Number of multipliers samples (default = 1000)
+#'@param graph        Set to TRUE if one wants the dependogram of P-values for the Moebius statistics
 #'
 #'
 #'@return \item{stat}{List of Cramer-von Mises statistics cvm, tilde Sn, and test combinations tilde Tn and tilde Tn2 (only pairs), as defined in Nasri(2022).}

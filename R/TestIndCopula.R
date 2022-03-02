@@ -2,15 +2,17 @@
 #'
 #'@description This function computes Cramer-von Mises statistics and their combination for a tests of independence between random variables with arbitrary distributions. The P-values are computed using Gaussian multipliers.
 #'
-#'@param x     Data matrix
+#'@param x            Data matrix
 #'@param trunc.level  Only subsets of cardinality <= trunc.level (default=2) are considered for the Moebius statistics.
-#'@param B        Number of multipliers samples (default = 1000)
-#'@param par      Set to TRUE if one prefers paraller computing (slower)
-#'@param ncores   Number of cores for parallel computing (default is 2)
-#'@param graph    Set to TRUE if one wants the dependogram of P-values for the Moebius statistics
+#'@param B            Number of multipliers samples (default = 1000)
+#'@param par          Set to TRUE if one prefers paraller computing (slower)
+#'@param ncores       Number of cores for parallel computing (default is 2)
+#'@param graph        Set to TRUE if one wants the dependogram of P-values for the Moebius statistics
 #'
 #'@return \item{stat}{List of Cramer-von Mises statistics cvm, Sn  from the multilinear copula, and test combinations Tn and Tn2 (only pairs)}
 #'@return \item{pvalue}{Approximated P-values for the tests using Gaussian multipliers}
+#'@return \item{card}{Cardinaly of the subsets for the Moebius statistics}
+#'@return \item{subsets}{Subsets for the Moebius statistics}
 #'
 #'@references Genest, Neslehova, Remillard & Murphy (2019). Testing for independence in arbitrary distributions
 #'

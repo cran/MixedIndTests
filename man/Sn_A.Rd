@@ -14,11 +14,11 @@ Sn_A(x, trunc.level)
 \value{
 \item{stats}{Cramer-von Mises Moebius statistics}
 
-\item{cardA}{cardinality of subsets}
+\item{cardA}{Cardinality of subsets}
 
 \item{M}{Matrix for multitpliers bootstrap for stats}
 
-\item{Asets}{vector of (0,1) for Moebius subsets}
+\item{Asets}{Vector of (0,1) for Moebius subsets}
 
 \item{Sn}{Cramer-von Mises Sn statistic}
 

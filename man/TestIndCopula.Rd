@@ -30,6 +30,10 @@ TestIndCopula(
 \item{stat}{List of Cramer-von Mises statistics cvm, Sn  from the multilinear copula, and test combinations Tn and Tn2 (only pairs)}
 
 \item{pvalue}{Approximated P-values for the tests using Gaussian multipliers}
+
+\item{card}{Cardinaly of the subsets for the Moebius statistics}
+
+\item{subsets}{Subsets for the Moebius statistics}
 }
 \description{
 This function computes Cramer-von Mises statistics and their combination for a tests of independence between random variables with arbitrary distributions. The P-values are computed using Gaussian multipliers.

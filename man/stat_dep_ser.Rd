@@ -7,9 +7,9 @@
 stat_dep_ser(x, lag)
 }
 \arguments{
-\item{x}{time series}
+\item{x}{Time series}
 
-\item{lag}{number of lags.}
+\item{lag}{Number of lags.}
 }
 \value{
 \item{tau}{Kendall's taus for lags 1:lag}
@@ -25,6 +25,6 @@ out <- stat_dep_ser(X,10)
 
 }
 \references{
-B.R Nasri (2021). Test of serial dependence for arbitrary distributions
+B.R Nasri (2021). Tests of serial dependence for arbitrary distributions
 }
 \keyword{internal}

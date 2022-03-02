@@ -21,5 +21,5 @@ AutoDep(out)
 
 }
 \references{
-B.R Nasri (2021). Test of serial dependence for arbitrary distributions
+B.R Nasri (2021). Tests of serial dependence for arbitrary distributions
 }

@@ -9,7 +9,7 @@
 #'
 #'
 #'@return \item{stats}{Cramer-von Mises Moebius statistics}
-#'@return \item{cardA}{cardinality of subsets}
+#'@return \item{cardA}{Cardinality of subsets}
 #'@return \item{M}{Matrix for multitpliers bootstrap for stats}
 #'@return \item{Asets}{vector of (0,1) for Moebius subsets}
 #'@return \item{Sn}{Cramer-von Mises Sn statistic}

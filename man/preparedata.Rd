@@ -2,7 +2,7 @@
 % Please edit documentation in R/preparedata.R
 \name{preparedata}
 \alias{preparedata}
-\title{Computes the Cramer-von Mises statistic Sn for the test of randomness}
+\title{Computes unique values, cdf and pdf}
 \usage{
 preparedata(x)
 }
@@ -12,17 +12,17 @@ preparedata(x)
 \value{
 \item{values}{Unique (sorted) values}
 
-\item{m}{Unique (sorted) values}
+\item{m}{Number of unique values}
 
-\item{Fn}{Empirical cdf of the values}
+\item{Fn}{Empirical cdf of the unique values}
 
-\item{fn}{Empirical pdf of the values}
+\item{fn}{Empirical pdf of the unique values}
 }
 \description{
-This function computes the Cramer-von Mises statistic for a tests of randomness for p consectives values X(1), ..., X(p). Usefull for traditionall bootstrapping.
+This function computes the unique values, cdf and pdf for a series of data.
 }
 \references{
-B.R Nasri (2021). Test of serial dependence for arbitrary distributions
+B.R Nasri (2021). Tests of serial dependence for arbitrary distributions
 
 C. Genest, J.G. Neslehova, B.N. Remillard and O. Murphy (2019). Testing for independence in arbitrary distributions.
 

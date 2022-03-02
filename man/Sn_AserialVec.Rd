@@ -16,7 +16,7 @@ Sn_AserialVec(Y, p, trunc.level = 2)
 \value{
 \item{stats}{Cramer-von Mises Moebius statistics}
 
-\item{cardA}{cardinality of subsets}
+\item{cardA}{Cardinality of subsets}
 
 \item{M}{Matrix for multitpliers bootstrap for stats}
 

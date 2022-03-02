@@ -2,17 +2,19 @@
 #'
 #'@description This function computes Cramer-von Mises statistics from the multilinear copula and their combination for a tests of randomness for p consectives values X(1), ..., X(p). The p-values are computed using Gaussian multipliers.
 #'
-#'@param x        Time series
-#'@param p        Number of consecutive observations
+#'@param x            Time series
+#'@param p            Number of consecutive observations
 #'@param trunc.level  Only subsets of cardinality <= trunc.level (default=2) are considered for the Moebius statistics.
-#'@param B        Number of multipliers samples (default = 1000)
-#'@param par      Set to TRUE if one prefers paraller computing (slower)
-#'@param ncores   Number of cores for parallel computing (default = 2)
-#'@param graph    Set to TRUE if one wants the dependogram of P-values for the Moebius statistics
+#'@param B            Number of multipliers samples (default = 1000)
+#'@param par          Set to TRUE if one prefers paraller computing (slower)
+#'@param ncores       Number of cores for parallel computing (default = 2)
+#'@param graph        Set to TRUE if one wants the dependogram of P-values for the Moebius statistics
 #'
 #'
 #'@return \item{stat}{List of Cramer-von Mises statistics cvm, Sn, and test combinations Tn and Tn2 (only pairs)}
 #'@return \item{pvalue}{Approximated P-values for the tests using Gaussian multipliers}
+#'@return \item{card}{Cardinaly of the subsets for the Moebius statistics}
+#'@return \item{subsets}{Subsets for the Moebius statistics}
 #'
 #'@references B.R Nasri (2022). Tests of serial dependence for arbitrary distributions
 #'

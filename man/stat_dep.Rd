@@ -7,16 +7,16 @@
 stat_dep(x, y)
 }
 \arguments{
-\item{x}{vector of length n}
+\item{x}{Vector of length n}
 
-\item{y}{vector of length n}
+\item{y}{Vector of length n}
 }
 \value{
 \item{tau}{Kendall's taus for lags 1:lag}
 
 \item{rho}{Spearman's rhos for lags 1:lag}
 
-\item{s2}{estimated variance of Spearman's rho}
+\item{s2}{Estimated variance of Spearman's rho}
 }
 \description{
 This function Computes the Kendall's taus and Spearman's rho for tests of independence used in EstDep

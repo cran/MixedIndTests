@@ -7,12 +7,12 @@
 SimAR1Poisson(param, n)
 }
 \arguments{
-\item{param}{param[1] = a>0, param[2] = b, 0<=b <1 (for stationarity)}
+\item{param}{Param[1] = a>0, param[2] = b, 0<=b <1 (for stationarity)}
 
-\item{n}{length of the series.}
+\item{n}{Length of the series.}
 }
 \value{
-\item{X}{simulated series}
+\item{X}{Simulated series}
 }
 \description{
 Conditionally on the past, X[t] is Poisson with lambda[t] = a+bX[t-1]

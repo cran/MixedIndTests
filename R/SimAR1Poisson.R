@@ -2,12 +2,12 @@
 #'
 #'@description Conditionally on the past, X[t] is Poisson with lambda[t] = a+bX[t-1]
 #'
-#'@param param     param[1] = a>0, param[2] = b, 0<=b <1 (for stationarity)
-#'@param n         length of the series.
+#'@param param     Param[1] = a>0, param[2] = b, 0<=b <1 (for stationarity)
+#'@param n         Length of the series.
 #
 #'
 #'
-#'@return \item{X}{simulated series}
+#'@return \item{X}{Simulated series}
 #'
 #'
 #'@examples

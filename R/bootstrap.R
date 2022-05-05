@@ -11,7 +11,7 @@
 #'@return \item{cvm_sim}{Simulated value of the Cramer-von Mises statistics}
 #'@return \item{sn_sim}{simulated value of the Cramer-von Mises statistic Sn}
 #'
-#'@references B.R Nasri (2021). Test of serial dependence for arbitrary distributions
+#'@references B.R Nasri (2021). Tests of serial dependence for arbitrary distributions
 #'
 #'
 #'@keywords internal

@@ -14,7 +14,7 @@
 #'@references B.R Nasri (2021). Tests of serial dependence for arbitrary distributions
 #'
 
-#'#'@examples
+#'@examples
 #' X <- SimAR1Poisson(c(5,0.2),100)
 #' out <- select_p(X)
 #'

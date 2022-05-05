@@ -14,7 +14,7 @@
 #'@examples
 #' x <- SimAR1Poisson(c(5,0.2),100)
 #' y <- SimAR1Poisson(c(5,0.2),100)
-#'out <- stat_dep(x,y)
+#' out <- stat_dep(x,y)
 
 #'
 #'@keywords internal

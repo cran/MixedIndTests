@@ -22,6 +22,6 @@ bootstrap(M, J, n)
 This function simulates Cramer-von Mises statistics using Gaussian multipliers.
 }
 \references{
-B.R Nasri (2021). Test of serial dependence for arbitrary distributions
+B.R Nasri (2021). Tests of serial dependence for arbitrary distributions
 }
 \keyword{internal}

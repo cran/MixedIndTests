@@ -13,7 +13,7 @@
 #'@references B.R Nasri (2022). Tests of serial dependence for arbitrary distributions
 #'
 #'@examples
-#'out <-EstDepSerial(SimAR1Poisson(c(5,0.4),100),10)
+#' out <-EstDepSerial(SimAR1Poisson(c(5,0.4),100),10)
 
 
 

@@ -21,9 +21,9 @@
 #'@importFrom foreach %dopar%
 #'@import doParallel
 
-#'#'@examples
-#'X <- SimAR1Poisson(c(5,0.2),100)
-#'out <- TestIndSerCopula(X,5,3)
+#'@examples
+#' X <- SimAR1Poisson(c(5,0.2),100)
+#' out <- TestIndSerCopula(X,5,3)
 
 
 

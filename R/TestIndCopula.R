@@ -19,8 +19,8 @@
 #'@importFrom foreach %dopar%
 #'@import doParallel
 #'@examples
-#'x <- matrix(rnorm(250),ncol=5)
-#'out <-TestIndCopula(x)
+#' x <- matrix(rnorm(250),ncol=5)
+#' out <-TestIndCopula(x)
 
 
 

@@ -11,9 +11,6 @@ Dependogram(out, stat = "CVM")
 
 \item{stat}{Name of statistics to be used (default is "CVM")}
 }
-\value{
-\item{}{Plot of the graph of P-values of statistics}
-}
 \description{
 This function, used in EstDep, TestIndCopula and TestIndSerCopula, draws the P-values of the Moebius Cramer-von Mises statistics from the multilinear copula and their combination for a tests of randomness for k consectives values X(1), ..., X(k) or for a test of independence between random variables.
 }

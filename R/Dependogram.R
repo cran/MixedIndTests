@@ -5,13 +5,12 @@
 #'@param out      List of the output from EstDep, TestIndCopula or TestIndSerCopula (P-values, subsets)
 #'@param stat     Name of statistics to be used (default is "CVM")
 #
-#'@return \item{}{Plot of the graph of P-values of statistics}
 #'
 #'@references Genest, Neslehova, Remillard & Murphy (2019). Testing for independence in arbitrary distributions
 #'@examples
-#'x <- matrix(rnorm(250),ncol=5)
-#'out <-TestIndCopula(x)
-#'Dependogram(out)
+#' x <- matrix(rnorm(250),ncol=5)
+#' out <-TestIndCopula(x)
+#' Dependogram(out)
 #'
 Dependogram = function(out,stat="CVM")
 {

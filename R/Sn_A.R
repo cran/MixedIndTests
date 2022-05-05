@@ -17,8 +17,8 @@
 #'
 
 #'#'@examples
-#'X <- rnorm(100,5)
-#'out <- Sn_A(X,3)
+#' X <- rnorm(100,5)
+#' out <- Sn_A(X,3)
 
 #'@keywords internal
 #'

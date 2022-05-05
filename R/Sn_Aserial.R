@@ -19,8 +19,8 @@
 #'
 
 #'#'@examples
-#'X <- SimAR1Poisson(c(5,0.2),100)
-#'out <- Sn_Aserial(X,5,3)
+#' X <- SimAR1Poisson(c(5,0.2),100)
+#' out <- Sn_Aserial(X,5,3)
 
 #'@keywords internal
 #'

@@ -23,10 +23,11 @@ select_p(X, p0 = 2, d = 5, q = 2.4, lambda = 0.25)
 \description{
 This function uses a AIC/BIC type criterion to select p based on the data.
 }
-\references{
-B.R Nasri (2021). Tests of serial dependence for arbitrary distributions
-
-#'@examples
+\examples{
 X <- SimAR1Poisson(c(5,0.2),100)
 out <- select_p(X)
+
+}
+\references{
+B.R Nasri (2021). Tests of serial dependence for arbitrary distributions
 }

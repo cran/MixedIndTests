@@ -19,8 +19,8 @@
 #'
 
 #'#'@examples
-#'Y <- data(Y)
-#'out <- Sn_Aserial(Y,5,2)
+#' Y <- data(Y)
+#' out <- Sn_Aserial(Y,5,2)
 
 #'@keywords internal
 #'

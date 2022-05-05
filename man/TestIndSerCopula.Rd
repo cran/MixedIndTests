@@ -41,6 +41,10 @@ TestIndSerCopula(
 \description{
 This function computes Cramer-von Mises statistics from the multilinear copula and their combination for a tests of randomness for p consectives values X(1), ..., X(p). The p-values are computed using Gaussian multipliers.
 }
+\examples{
+X <- SimAR1Poisson(c(5,0.2),100)
+out <- TestIndSerCopula(X,5,3)
+}
 \references{
 B.R Nasri (2022). Tests of serial dependence for arbitrary distributions
 }

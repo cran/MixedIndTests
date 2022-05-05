@@ -13,7 +13,7 @@
 #'
 #'@examples
 #' X <- SimAR1Poisson(c(5,0.2),100)
-#'out <- stat_dep_ser(X,10)
+#' out <- stat_dep_ser(X,10)
 
 #'
 #'@keywords internal

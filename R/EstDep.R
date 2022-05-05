@@ -12,8 +12,8 @@
 #'@references Genest, Neslehova, Remillard & Murphy (2018). Testing for independence in arbitrary distributions
 #'
 #'@examples
-#'x <- matrix(rnorm(500),ncol=10)
-#'out <-EstDep(x)
+#' x <- matrix(rnorm(500),ncol=10)
+#' out <-EstDep(x)
 
 EstDep = function(x,graph=FALSE)
 {

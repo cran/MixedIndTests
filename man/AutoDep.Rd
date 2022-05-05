@@ -9,9 +9,6 @@ AutoDep(out)
 \arguments{
 \item{out}{List of the output of EstDepSerial (P-values, subsets)}
 }
-\value{
-\item{}{Plot of the graph of P-values of dependence measures for serial dependence}
-}
 \description{
 This function, used in EstDepSerial, draws the P-values of Kendall's tau and Spearman's rho for a given number of lags.
 }

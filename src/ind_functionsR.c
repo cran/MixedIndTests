@@ -203,6 +203,22 @@ void prepare_data(double *x, int *n, double *values, int *m, double *Fn, double 
       return s;
    }
 
+double stdev(double *x, int n)
+
+{
+  int i;
+  double m, sum = 0.0;
+
+  m = mean(x,n);
+
+  for(i=0;i<n;i++)
+    sum += (x[i]-m)*(x[i]-m);
+
+  return sqrt(sum/((double) n));
+}
+
+
+
 
    double maxvec(double *x, int n)
 
@@ -2246,8 +2262,8 @@ Amatserial(A, cardA, p[0], p);
 
         void stats_serialVectors(double *x, int *n, int *d, int *p, int *trunc, double *stat, double *cardA, double *M, double *Asets, double *sn, double *J)
 {
-     
-      
+
+
      int n2, *m,*mm;
      double **X, **x2, **y, **values, *I4temp, *I1temp, *I1pointtemp, *I4, *I1, *I1point, *D00;
      int i,j,k,l;
@@ -2261,47 +2277,47 @@ Amatserial(A, cardA, p[0], p);
      D00    = calloc(1,sizeof(double));
 
      for(k=0;k<d[0];k++)
-      { 
+      {
           X[k]      = calloc(n[0],sizeof(double));
           values[k] = calloc(n[0],sizeof(double));
           x2[k]     = calloc(n[0]*2,sizeof(double));
           y[k]      = calloc(n[0],sizeof(double));
       }
 
-   
+
 
       l=0;
       for(k=0;k<d[0];k++)
       {
          for(i=0;i<n[0];i++)
-         { 
+         {
             X[k][i]= x[l];
             l++;
          }
       }
-      
-     
-    
+
+
+
      m      =  calloc(d[0],sizeof(int));
      mm     =  calloc(1,sizeof(int));
 
-          
+
      for(k=0;k<d[0];k++)
-     { 
+     {
          unique(X[k],n,values[k],mm);
          m[k] = mm[0];
-                
+
      }
 
-     
-     
+
+
     I4temp       = calloc(n2,sizeof(double));
     I1pointtemp  = calloc(n[0],sizeof(double));
     I1temp       = calloc(n2,sizeof(double));
     I4           = calloc(n2*p[0],sizeof(double));
     I1point      = calloc(n[0]*p[0],sizeof(double));
     I1           = calloc(n2*p[0], sizeof(double));
-        
+
 
     for(k=0;k<d[0];k++)
      {
@@ -2311,23 +2327,23 @@ Amatserial(A, cardA, p[0], p);
           x2[k][i+n[0]] = X[k][i];
         }
      }
-     
-    
+
+
 
  for(j=0;j<p[0];j++)
      {
        for(i=0;i<n[0];i++)
          {
            for(k=0;k<d[0];k++)
-            { 
+            {
                 y[k][i] = x2[k][n[0]+i-j];
             }
          }
-         
-         
+
+
          IfunVectors(y, n, d, values, m, I1temp, I1pointtemp, I4temp,D00);
-         
-          
+
+
 
         for(i=0;i<n2;i++)
          {
@@ -2339,27 +2355,27 @@ Amatserial(A, cardA, p[0], p);
          {
              I1point[j*n[0]+i] = I1pointtemp[i];
          }
-        
+
      }
 
-     
+
      Sn_serialVectors(I4,I1,I1point,D00,n,p,sn,J);
-    
+
      Sn_A_serialvec(I4, n, p, trunc, stat, cardA, M, Asets);
 
 
- 
+
 
        free(m); free(mm);
-       free(I1); free(I4);  free(I1point); 
+       free(I1); free(I4);  free(I1point);
        free(I1temp); free(I4temp); free(I1pointtemp); free(D00);
-       
+
        for(k=0;k<d[0];k++)
-         { 
+         {
          free(X[k]); free(values[k]); free(x2[k]); free(y[k]);
          }
        free(values); free(X); free(x2); free(y);
-      
+
 }
 
 
@@ -2472,6 +2488,608 @@ void stats_serialVectors_cvm(double *x, int *n, int *d, int *p, int *trunc, doub
          free(X[k]); free(values[k]); free(x2[k]); free(y[k]);
          }
        free(values); free(X); free(x2); free(y);
+
+}
+
+
+
+/****************************************************************************************/
+/* This file contains functions to compute dependence measures used in                  */
+/* tests of independence and randomness for  arbitrary data                             */
+/*                                                                                      */
+/*  By Bruno Remillard, October 1, 2022                                                 */
+/****************************************************************************************/
+
+
+/*  Inverse distribution function of the standard Gaussian r.v.  from Algorithm AS 241 */
+
+
+double Ninv2(double u)
+{
+  double plow, phigh, q, r, *a, *b, *c, *d;
+
+  a =(double *)calloc(7,sizeof(double));
+  b =(double *)calloc(6,sizeof(double));
+  c =(double *)calloc(7,sizeof(double));
+  d =(double *)calloc(5,sizeof(double));
+
+  /* Coefficients in rational approximations */
+  a[1] = -3.969683028665376e+01;
+  a[2] = 2.209460984245205e+02;
+  a[3] = -2.759285104469687e+02;
+  a[4] = 1.383577518672690e+02;
+  a[5] = -3.066479806614716e+01;
+  a[6] =  2.506628277459239;
+
+  b[1] = -5.447609879822406e+01;
+  b[2] =  1.615858368580409e+02;
+  b[3] = -1.556989798598866e+02;
+  b[4] =  6.680131188771972e+01;
+  b[5] = -1.328068155288572e+01;
+
+  c[1] = -7.784894002430293e-03;
+  c[2] = -3.223964580411365e-01;
+  c[3] = -2.400758277161838;
+  c[4] = -2.549732539343734;
+  c[5] = 4.374664141464968;
+  c[6] =  2.938163982698783;
+
+  d[1] = 7.784695709041462e-03;
+  d[2] = 3.224671290700398e-01;
+  d[3] = 2.445134137142996;
+  d[4] =  3.754408661907416;
+
+  /* Break-points */
+
+  plow  = 0.02425;
+  phigh = 1 - plow;
+
+
+  if(u < plow)
+  {  q = sqrt(-2*log(u));
+    return  (((((c[1]*q+c[2])*q+c[3])*q+c[4])*q+c[5])*q+c[6]) /((((d[1]*q+d[2])*q+d[3])*q+d[4])*q+1);
+  }
+  else{
+    if(u <= phigh)
+    { q = u - 0.5;
+      r = q*q;
+      return  (((((a[1]*r+a[2])*r+a[3])*r+a[4])*r+a[5])*r+a[6])*q /(((((b[1]*r+b[2])*r+b[3])*r+b[4])*r+b[5])*r+1);
+    }
+    else
+    {
+      q = sqrt(-2*log(1-u));
+      return -(((((c[1]*q+c[2])*q+c[3])*q+c[4])*q+c[5])*q+c[6]) /((((d[1]*q+d[2])*q+d[3])*q+d[4])*q+1);
+    }
+  }
+  free(a);
+  free(b);
+  free(c);
+  free(d);
+}
+
+
+
+
+double phi(double x)   /* density of standard Gaussian    */
+
+{
+  double cte;
+
+  cte = 1.0/sqrt(2.0*3.14159265359);
+  return exp(-0.5*x*x)*cte;
+
+
+}
+
+
+double LE(double u)   /*Integral of inverse exponential   */
+
+{
+  if(u>0.0 )
+    return u-u*log(u);
+  else
+    return 0.0;
+}
+
+double LG(double u)   /*Integral of inverse Gaussian    */
+
+{
+  if(u>0.0  && u < 1.0 )
+    return phi(Ninv2(u));
+  else
+    return 0.0;
+}
+
+void cdfn(double *x, int *n, double *Fn, double *Fn0, double *fn)
+{
+  int i,k, s0,s1;
+  double v;
+  for(i=0;i<n[0];i++)
+  {
+    v = x[i];
+    s0 = 0;
+    s1 = 0;
+    for(k=0;k<n[0];k++)
+    {
+      s1 += (x[k]<= v);
+      s0 += (x[k]< v);
+    }
+
+    Fn[i]  = ((double) s1)/((double)n[0]);
+    Fn0[i] = ((double) s0)/((double)n[0]);
+    fn[i]  = Fn[i]-Fn0[i];
+  }
+}
+
+void Stat_A(double *x, int *n, int *d, int *trunc, double *statS, double *statG, double *statE,  double *cardA, double *Asets)
+  /* This procedure computes the statistics $rho_{A,n}$ of the multilinear copula for all subsets A with a max lag of mm.
+   This is done in the context of non-serial dependence.
+   */
+{
+  int i,j,k,l, cA,**A;
+  double ssG, ssS, ssE, *sgammaS,*sgammaG, *sgammaE, *snG, *snS, *snE;
+  double **matx, **matG, **matS, **matE, **matFn, **matfn, **matFn0, **IG, **IS,**IE;
+
+  snE =(double *)calloc(d[0],sizeof(double));
+
+  snS =(double *)calloc(d[0],sizeof(double));
+
+  snG =(double *)calloc(d[0],sizeof(double));
+
+  matS = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matS[j] =(double *)calloc(n[0],sizeof(double));
+
+  matE = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matE[j] =(double *)calloc(n[0],sizeof(double));
+
+  matG = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matG[j] =(double *)calloc(n[0],sizeof(double));
+
+
+
+
+
+  matx = (double  **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matx[j] = (double *)calloc(n[0],sizeof(double));
+
+
+
+  matFn = (double  **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matFn[j] = (double *)calloc(n[0],sizeof(double));
+
+  matFn0 = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matFn0[j] = (double *)calloc(n[0],sizeof(double));
+
+  matfn = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matfn[j] = (double *)calloc(n[0],sizeof(double));
+
+
+  IG = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    IG[j] = (double *)calloc(n[0],sizeof(double));
+
+  IS = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    IS[j] = (double *)calloc(n[0],sizeof(double));
+
+  IE = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    IE[j] = (double *)calloc(n[0],sizeof(double));
+
+
+
+
+  l=0;
+
+  for(j=0;j<d[0];j++)
+  {
+    for(i=0;i<n[0];i++)
+    {
+      matx[j][i]= x[l];
+      l++;
+    }
+  }
+
+
+
+  for(j=0;j<d[0];j++)
+  {
+    cdfn(matx[j],n,matFn[j],matFn0[j],matfn[j]);
+    for(i=0;i<n[0];i++)
+    {
+      IS[j][i]= 0.5*(matFn[j][i]+matFn0[j][i]-1.0);
+      IG[j][i]= (LG(matFn[j][i])-LG(matFn0[j][i]))/matfn[j][i];
+      IE[j][i]= (LE(matFn[j][i])-LE(matFn0[j][i]))/matfn[j][i]-1.0;
+
+    }
+    snS[j]=stdev(IS[j],n[0]);
+    snG[j]=stdev(IG[j],n[0]);
+    snE[j]=stdev(IE[j],n[0]);
+
+  }
+
+
+  cA= tot_trunc(d[0],trunc[0]);
+
+
+
+  A = (int **)calloc(cA,sizeof(int *));
+  for(j=0; j<cA; j++)
+    A[j] = (int *)calloc(d[0],sizeof(int));
+
+  Amat(A,cardA,d[0],trunc);
+
+
+  sgammaE = (double*)calloc(cA,sizeof(double));
+  sgammaG = (double*)calloc(cA,sizeof(double));
+  sgammaS = (double*)calloc(cA,sizeof(double));
+
+
+  l=0;
+  for(j=0;j<d[0];j++)
+  {
+    for(i=0;i<cA;i++)
+    {
+      Asets[l] = A[i][j];
+      l++;
+    }
+  }
+
+
+
+
+  for(k=0;k< cA;k++)
+  {
+    statS[k]=0.0;
+    statG[k]=0.0;
+    statE[k]=0.0;
+  }
+
+  for(k=0;k< cA;k++)
+  {
+    ssS = 1.0;
+    ssE = 1.0;
+    ssG = 1.0;
+
+    for(j=0;j<d[0];j++)
+    {
+      if(A[k][j])
+      {
+        ssS *= snS[j];
+        ssG *= snG[j];
+        ssE *= snE[j];
+      }
+    }
+    sgammaS[k] += ssS;
+    sgammaG[k] += ssG;
+    sgammaE[k] += ssE;
+
+  }
+
+
+  for(i=0; i<n[0]; i++)
+  {
+    for(k=0;k< cA;k++)
+    {
+      ssS = 1.0;
+      ssE = 1.0;
+      ssG = 1.0;
+
+      for(j=0;j<d[0];j++)
+      {
+        if(A[k][j])
+        {
+          ssS *= IS[j][i];
+          ssG *= IG[j][i];
+          ssE *= IE[j][i];
+        }
+      }
+      statS[k] += ssS;
+      statG[k] += ssG;
+      statE[k] += ssE;
+
+    }
+
+
+  }
+
+
+  for(k=0;k< cA;k++)
+  {
+    statS[k]=statS[k]/((double)n[0])/sgammaS[k];
+    statG[k]=statG[k]/((double)n[0])/sgammaG[k];
+    statE[k]=statE[k]/((double)n[0])/sgammaE[k];
+  }
+
+
+
+  free(sgammaE);
+  free(sgammaG);
+  free(sgammaS);
+  free(snE);
+  free(snG);
+  free(snS);
+
+
+
+
+
+  for(k=0;k< cA;k++)
+    free(A[k]);
+
+  free(A);
+
+  for(j=0;j< d[0];j++)
+  {
+    free(IE[j]);
+    free(IG[j]);
+    free(IS[j]);
+    free(matFn[j]);
+    free(matFn0[j]);
+    free(matfn[j]);
+    free(matx[j]);
+    free(matG[j]);
+    free(matE[j]);
+    free(matS[j]);
+
+  }
+
+  free(matx);
+  free(matG);
+  free(matE);
+  free(matS);
+  free(matFn);
+  free(matFn0);
+  free(matfn);
+  free(IE);
+  free(IG);
+  free(IS);
+
+
+}
+
+
+void Stat_A_serial(double *y, int *n, int *d, int *trunc, double *statS, double *statG, double *statE,  double *cardA, double *Asets)
+  /* This procedure computes the statistics $rho_{A,n}$ of the multilinear copula for all subsets A with a max lag of mm.
+   This is done in the context of non-serial dependence.
+   */
+{
+  int i,j,k,l, cA, **A;
+  double ssG, ssS, ssE, *sgammaS,*sgammaG, *sgammaE, snG, snS, snE, *y2;
+  double **matx, **matG, **matS, **matE, **matFn, **matfn, **matFn0, **IG, **IS,**IE;
+
+
+  matS = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matS[j] =(double *)calloc(n[0],sizeof(double));
+
+  matE = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matE[j] =(double *)calloc(n[0],sizeof(double));
+
+  matG = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matG[j] =(double *)calloc(n[0],sizeof(double));
+
+
+  IS = (double  **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    IS[j] =(double *)calloc(n[0],sizeof(double));
+
+  IE = (double  **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    IE[j] =(double *)calloc(n[0],sizeof(double));
+
+  IG = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    IG[j] =(double *)calloc(n[0],sizeof(double));
+
+
+
+  matx = (double  **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matx[j] = (double *)calloc(n[0],sizeof(double));
+
+
+
+  matFn = (double  **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matFn[j] = (double *)calloc(n[0],sizeof(double));
+
+  matFn0 = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matFn0[j] = (double *)calloc(n[0],sizeof(double));
+
+  matfn = (double **)calloc(d[0],sizeof(double *));
+  for(j=0; j<d[0]; j++)
+    matfn[j] = (double *)calloc(n[0],sizeof(double));
+
+
+  y2     =(double *)  calloc(n[0]*2,sizeof(double));
+
+
+  for(i=0;i<n[0];i++)
+  {
+    y2[i]   = y[i];
+    y2[i+n[0]] = y[i];
+
+
+  }
+
+  l=0;
+
+  for(j=0;j<d[0];j++)
+  {
+    for(i=0;i<n[0];i++)
+    {
+      matx[j][i]=  y2[n[0]+i-j];
+      l++;
+    }
+  }
+
+
+
+  for(j=0;j<d[0];j++)
+  {
+    cdfn(matx[j],n,matFn[j],matFn0[j],matfn[j]);
+    for(i=0;i<n[0];i++)
+    {
+      IS[j][i]= 0.5*(matFn[j][i]+matFn0[j][i]-1.0);
+      IG[j][i]= (LG(matFn[j][i])-LG(matFn0[j][i]))/matfn[j][i];
+      IE[j][i]= (LE(matFn[j][i])-LE(matFn0[j][i]))/matfn[j][i]-1.0;
+
+    }
+    snS=stdev(IS[0],n[0]);
+    snG=stdev(IG[0],n[0]);
+    snE=stdev(IE[0],n[0]);
+
+  }
+
+
+  cA= tot_trunc_serial(d[0],trunc[0]);
+
+
+
+  A = (int **)calloc(cA,sizeof(int *));
+  for(j=0; j<cA; j++)
+    A[j] = (int *)calloc(d[0],sizeof(int));
+
+  Amatserial(A,cardA,d[0],trunc);
+
+
+
+
+
+  sgammaE = (double*)calloc(cA,sizeof(double));
+  sgammaG = (double*)calloc(cA,sizeof(double));
+  sgammaS = (double*)calloc(cA,sizeof(double));
+
+
+  l=0;
+  for(j=0;j<d[0];j++)
+  {
+    for(i=0;i<cA;i++)
+    {
+      Asets[l] = A[i][j];
+      l++;
+    }
+  }
+
+
+
+
+  for(k=0;k< cA;k++)
+  {
+    statS[k]=0.0;
+    statG[k]=0.0;
+    statE[k]=0.0;
+  }
+
+  for(k=0;k< cA;k++)
+  {
+    ssS = 1.0;
+    ssE = 1.0;
+    ssG = 1.0;
+
+    for(j=0;j<d[0];j++)
+    {
+      if(A[k][j])
+      {
+        ssS *= snS;
+        ssG *= snG;
+        ssE *= snE;
+      }
+    }
+    sgammaS[k] += ssS;
+    sgammaG[k] += ssG;
+    sgammaE[k] += ssE;
+
+  }
+
+
+  for(i=0; i<n[0]; i++)
+  {
+    for(k=0;k< cA;k++)
+    {
+      ssS = 1.0;
+      ssE = 1.0;
+      ssG = 1.0;
+
+      for(j=0;j<d[0];j++)
+      {
+        if(A[k][j])
+        {
+          ssS *= IS[j][i];
+          ssG *= IG[j][i];
+          ssE *= IE[j][i];
+        }
+      }
+      statS[k] += ssS;
+      statG[k] += ssG;
+      statE[k] += ssE;
+
+    }
+
+
+  }
+
+
+  for(k=0;k< cA;k++)
+  {
+    statS[k]=statS[k]/((double)n[0])/sgammaS[k];
+    statG[k]=statG[k]/((double)n[0])/sgammaG[k];
+    statE[k]=statE[k]/((double)n[0])/sgammaE[k];
+  }
+
+
+  free(y2);
+  free(sgammaE);
+  free(sgammaG);
+  free(sgammaS);
+
+
+
+
+
+
+  for(k=0;k< cA;k++)
+    free(A[k]);
+
+  free(A);
+
+  for(j=0;j< d[0];j++)
+  {
+    free(IE[j]);
+    free(IG[j]);
+    free(IS[j]);
+    free(matFn[j]);
+    free(matFn0[j]);
+    free(matfn[j]);
+    free(matx[j]);
+    free(matG[j]);
+    free(matE[j]);
+    free(matS[j]);
+
+  }
+
+  free(matx);
+  free(matG);
+  free(matE);
+  free(matS);
+  free(matFn);
+  free(matFn0);
+  free(matfn);
+  free(IE);
+  free(IG);
+  free(IS);
+
 
 }
 

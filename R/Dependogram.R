@@ -2,7 +2,7 @@
 #'
 #'@description This function, used in EstDep, TestIndCopula and TestIndSerCopula, draws the P-values of the Moebius Cramer-von Mises statistics from the multilinear copula and their combination for a tests of randomness for k consectives values X(1), ..., X(k) or for a test of independence between random variables.
 #'
-#'@param out      List of the output from EstDep, TestIndCopula or TestIndSerCopula (P-values, subsets)
+#'@param out      List of the output from EstDep, EstDepSerial, TestIndCopula or TestIndSerCopula (P-values, subsets)
 #'@param stat     Name of statistics to be used (default is "CVM")
 #
 #'

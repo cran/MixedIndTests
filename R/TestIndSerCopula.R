@@ -1,6 +1,6 @@
 #'@title Statistics and P-values for a test of randomness for a univariate time series
 #'
-#'@description This function computes Cramer-von Mises statistics from the multilinear copula and their combination for a tests of randomness for p consectives values X(1), ..., X(p). The p-values are computed using Gaussian multipliers.
+#'@description This function computes Cramer-von Mises statistics from the multilinear copula and their combination for tests of randomness of p consecutives values X(1), ..., X(p). The p-values are computed using Gaussian multipliers.
 #'
 #'@param x            Time series
 #'@param p            Number of consecutive observations

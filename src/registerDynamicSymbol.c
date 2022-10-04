@@ -15,6 +15,8 @@ extern void stats_serialVectors(void *, void *, void *, void *, void *, void *, 
 extern void stats_serial_bin(void *, void *, void *, void *, void *, void *, void *, void *);
 extern void statsim(void *, void *, void *, void *, void *, void *, void *);
 extern void prepare_data(void *, void *, void *, void *, void *, void *);
+extern void Stat_A_serial(void *, void *, void *, void *, void *, void *, void *, void *, void *);
+extern void Stat_A(void *, void *, void *, void *, void *, void *, void *, void *, void *);
 
 static const R_CMethodDef CEntries[] = {
   {"estdep",           (DL_FUNC) &estdep,            6},
@@ -26,6 +28,8 @@ static const R_CMethodDef CEntries[] = {
   {"stats_serial_bin", (DL_FUNC) &stats_serial_bin,  8},
   {"statsim",          (DL_FUNC) &statsim,           7},
   {"prepare_data",     (DL_FUNC) &prepare_data,      6},
+  {"Stat_A_serial",    (DL_FUNC) &Stat_A_serial,    9},
+  {"Stat_A",           (DL_FUNC) &Stat_A,    9},
   {NULL, NULL, 0}
 };
 

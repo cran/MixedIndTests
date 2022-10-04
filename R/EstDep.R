@@ -59,7 +59,7 @@ dd = dim(x)
 
   df = d*(d-1)/2
   pvalLBrho = 100*(1-pchisq(LBrho,df));
-  pvalLBtau = 100*(1-pchisq(LBrho,df));
+  pvalLBtau = 100*(1-pchisq(LBtau,df));
 
 
   out0 = list(tau=tau,rho=rho,

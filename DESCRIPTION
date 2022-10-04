@@ -1,7 +1,7 @@
 Package: MixedIndTests
 Type: Package
 Title: Tests of Randomness and Tests of Independence
-Version: 0.9.1
+Version: 1.1.0
 Authors@R: c( person(c("Bouchra","R."), "Nasri", role = c("aut", "cre","cph"), email = "bouchra.nasri@umontreal.ca"),
         person(c("Bruno","N"), "Remillard", role = c("aut"),email = "bruno.remillard@hec.ca"),
         person(c("Johanna","G"), "Neslehova", role = c("aut"),email = "johanna.neslehova@mcgill.ca"),
@@ -12,13 +12,13 @@ Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.5.0), doParallel, parallel, foreach, stats, copula
 Imports: ggplot2,survey
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 NeedsCompilation: yes
-Packaged: 2022-05-04 16:02:39 UTC; Utilisateur
+Packaged: 2022-10-04 13:04:48 UTC; Utilisateur
 Author: Bouchra R. Nasri [aut, cre, cph],
   Bruno N Remillard [aut],
   Johanna G Neslehova [aut],
   Christian Genest [aut]
 Maintainer: Bouchra R. Nasri <bouchra.nasri@umontreal.ca>
 Repository: CRAN
-Date/Publication: 2022-05-05 06:40:05 UTC
+Date/Publication: 2022-10-04 13:40:02 UTC

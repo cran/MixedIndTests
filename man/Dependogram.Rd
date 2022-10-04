@@ -7,7 +7,7 @@
 Dependogram(out, stat = "CVM")
 }
 \arguments{
-\item{out}{List of the output from EstDep, TestIndCopula or TestIndSerCopula (P-values, subsets)}
+\item{out}{List of the output from EstDep, EstDepSerial, TestIndCopula or TestIndSerCopula (P-values, subsets)}
 
 \item{stat}{Name of statistics to be used (default is "CVM")}
 }

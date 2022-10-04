@@ -39,7 +39,7 @@ TestIndSerCopula(
 \item{subsets}{Subsets for the Moebius statistics}
 }
 \description{
-This function computes Cramer-von Mises statistics from the multilinear copula and their combination for a tests of randomness for p consectives values X(1), ..., X(p). The p-values are computed using Gaussian multipliers.
+This function computes Cramer-von Mises statistics from the multilinear copula and their combination for tests of randomness of p consecutives values X(1), ..., X(p). The p-values are computed using Gaussian multipliers.
 }
 \examples{
 X <- SimAR1Poisson(c(5,0.2),100)

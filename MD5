@@ -1,9 +1,12 @@
-85f22d55563e69a98e87ec0dd7cf1117 *DESCRIPTION
-c05732e165e697f9afb7feb58b089864 *NAMESPACE
+275184d6f15ccca4ded1b673c7040d5b *DESCRIPTION
+d38c720afa61965f10405af44628859f *NAMESPACE
 2b367db08da18448ab50d6867f2e5ef1 *R/AutoDep.R
-6aaa94d09d35c917a505c6c2ff2b4c7b *R/Dependogram.R
-6dbfde85ec2597bdd238c36c5a78b3b7 *R/EstDep.R
+89da920b339703c43c95bc069f1f8702 *R/Dependogram.R
+f36d7d03b3eae625ad28cb62671f5bb8 *R/DependogramZ.R
+efb1b6e84e56d1f38ac26e77251517e7 *R/EstDep.R
+c12b66639457fddd0f529171a006550b *R/EstDepMoebius.R
 b984ee064191b64ebea327b130658fed *R/EstDepSerial.R
+5f9f2817b5764bea98422bf129f0e47e *R/EstDepSerialMoebius.R
 78f1a3eaf8abab2f7fc6836e8d6a089e *R/Finv.R
 11d1a00b078adf8481a63455a0ddb70a *R/SimAR1Poisson.R
 e41e4a637f6eff070c7dc21a974de8c9 *R/SimCopulaSeries.R
@@ -12,7 +15,7 @@ fa79983879e124027d18c5971c3c3e33 *R/Sn_A.R
 a09fa1cce6e6799593954e1bfa8f8cf9 *R/Sn_AserialVec.R
 6b40385165785931c5320b2f2c9fa128 *R/Sn_serial.R
 692fcec65a7e48d4a7fdf6a581d7911f *R/TestIndCopula.R
-583a99afd3ee0aab545b0f0fd322bd49 *R/TestIndSerCopula.R
+19b3a994c634494e0221d116fa391579 *R/TestIndSerCopula.R
 c6c514e7b2d9e54d6d1e3af3d35fc48e *R/TestIndSerCopulaMulti.R
 0e2e4734ad728780baf7f68458c53402 *R/bootstrap.R
 b1dd1912df36b5bebb0e85fe04412a44 *R/preparedata.R
@@ -25,9 +28,12 @@ c4452a09037c6fbe43c5da1cb4424283 *data/Y.rda
 96cd2843907c49cc312a508df44af7f3 *data/horseshoecrabs.rda
 7a4a4c77af2ee347e5d6021b8e38ed3a *data/lamb.rda
 866231dbb3fa8c8d5314d6dfd11270b0 *man/AutoDep.Rd
-a962d1014e4bac1dd07585d7fd870213 *man/Dependogram.Rd
+e1b8cb902edf208c63393242907e2ea4 *man/Dependogram.Rd
+ad5f047e2d29b81da3082127517d9f81 *man/DependogramZ.Rd
 43c2dac6b9e5537e4867429dd6662733 *man/EstDep.Rd
+a178b8d6eced00e0465b925027808f36 *man/EstDepMoebius.Rd
 ee34e14dcfe0607fa5a150311cd8c312 *man/EstDepSerial.Rd
+6f639986beb6c0f9788c9063690e64c1 *man/EstDepSerialMoebius.Rd
 61bf048dcbeb1cbaf9b1349b0e28d7b5 *man/Finv.Rd
 cae99e80a277997645e45c4a32c7a4ad *man/SimAR1Poisson.Rd
 1c911adf8a3fa09c3397b82de7e595e0 *man/SimCopulaSeries.Rd
@@ -36,7 +42,7 @@ fef22a2e50903e5091c1b9391012b577 *man/Sn_Aserial.Rd
 47e854f1543c355e0363aa8e2c65531c *man/Sn_AserialVec.Rd
 8630dfab398478454d56e91873a51df3 *man/Sn_serial.Rd
 6d103873436aea176802a187a80ae181 *man/TestIndCopula.Rd
-674145c57928c5f557587c6088f196ff *man/TestIndSerCopula.Rd
+8bc82f6cd6dd9a61d89cade72657f3f5 *man/TestIndSerCopula.Rd
 b0cb7434b0ea38d3dba0bbb0af0cbd7c *man/TestIndSerCopulaMulti.Rd
 866b3eaf811dce0d1f296cdf4b9d51d0 *man/X.Rd
 3b87ed518757397d3c89d73e6b4ce9b5 *man/Xbin.Rd
@@ -48,5 +54,5 @@ d941f11dbb987fd7e2474fc281f77853 *man/bootstrap.Rd
 0d51d7d8d78b6b18f990a2b15996f5ae *man/select_p.Rd
 7b711db5c7ea2dfe430c17704aec6b8d *man/stat_dep.Rd
 323500b0bc02aca35017468ff99d96fc *man/stat_dep_ser.Rd
-9ce74bed549b73011407f5581d2e0f5c *src/ind_functionsR.c
-827dc379916cc58f057578502151c865 *src/registerDynamicSymbol.c
+828792b916ce2b1685d4c816a6ea7835 *src/ind_functionsR.c
+bf6f3d89eac57d90ffb3eae566cefd15 *src/registerDynamicSymbol.c

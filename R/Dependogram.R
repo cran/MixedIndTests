@@ -24,7 +24,7 @@ Dependogram = function(out,stat="CVM")
   subsets = out$subsets
 
 
-  #library(ggplot2)
+
   mycol = c("black","red")
   x=c(1:m)
   Sig = as.factor(as.numeric(pval<5))

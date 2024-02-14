@@ -7,13 +7,13 @@
 SimCopulaSeries(family, n, tau = 0, param = NULL)
 }
 \arguments{
-\item{family}{"ind", "tent", "gaussian" , "t" , "clayton", "fgm", "frank", "gumbel", joe" , "plackett"}
+\item{family}{"ind", "tent", "gaussian", "t" , "clayton", "fgm", "frank", "gumbel", joe" , "plackett"}
 
 \item{n}{length of the time series}
 
 \item{tau}{Kendall's tau of the copula family}
 
-\item{param}{extra copula parameter: for "fgm",  param in {2,3,...} is the dimension of the copula; for "t", param = nu}
+\item{param}{extra copula parameter: for "fgm",  param is the dimension of the copula; for "t", param = nu}
 }
 \value{
 \item{U}{Simulated time series}

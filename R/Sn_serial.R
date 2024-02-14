@@ -1,6 +1,6 @@
 #'@title Computes the Cramer-von Mises statistic Sn for the test of randomness
 #'
-#'@description This function computes the Cramer-von Mises statistic for a tests of randomness for p consectives values X(1), ..., X(p). Usefull for traditionall bootstrapping.
+#'@description This function computes the Cramer-von Mises statistic for a tests of randomness for p consecutives values X(1), ..., X(p). Useful for traditional bootstrapping.
 #'
 #'@param x        Time series
 #'@param p        Number of consecutive observations

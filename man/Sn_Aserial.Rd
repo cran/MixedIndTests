@@ -27,7 +27,7 @@ Sn_Aserial(x, p, trunc.level)
 \item{J}{Matrix for multipliers bootstrap for Sn}
 }
 \description{
-This function he Moebius Cramer-von Mises statistics for a tests of randomness for observations X(1), ...l, X(p).
+This function computes Moebius Cramer-von Mises statistics for a tests of randomness for observations X(1), ..., X(p).
 }
 \references{
 B.R Nasri (2022). Tests of serial dependence for arbitrary distributions

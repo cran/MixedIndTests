@@ -13,7 +13,7 @@
 #'@return \item{card}{Cardinaly of the subsets for the Moebius statistics}
 #'@return \item{subsets}{Subsets for the Moebius statistics}
 #'
-#'@references B.R Nasri & B.N. Remillard (2022). Copula-based dependence measures for arbitrary data
+#'@references B.R Nasri & B.N. Remillard (2023). Tests of independence and randomness for arbitrary data using copula-based covariances
 #'
 #'@examples
 #' y<- SimAR1Poisson(c(5,0.2),100)

@@ -1,6 +1,6 @@
 #'@title Computes the Moebius Cramer-von Mises statistics for the test of randomness
 #'
-#'@description This function he Moebius Cramer-von Mises statistics for a tests of randomness for observations X(1), ...l, X(p).
+#'@description This function computes Moebius Cramer-von Mises statistics for a tests of randomness for observations X(1), ..., X(p).
 #'
 #'@param x            Time series.
 #'@param p            Number of consecutive observations for the test.

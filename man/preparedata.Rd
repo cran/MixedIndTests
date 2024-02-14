@@ -22,12 +22,12 @@ preparedata(x)
 This function computes the unique values, cdf and pdf for a series of data.
 }
 \references{
-B.R Nasri (2021). Tests of serial dependence for arbitrary distributions
+B.R. Nasri (2022). Tests of serial dependence for arbitrary distributions
 
 C. Genest, J.G. Neslehova, B.N. Remillard and O. Murphy (2019). Testing for independence in arbitrary distributions.
 
 #'@examples
-X <- SimAR1Poisson(c(5,0.2),100)
-out <- Sn_serial(X,5,3)
+x = c(0,0,0,2,3,1,3,1,2,0)
+out <- prepare_data(x)
 }
 \keyword{internal}

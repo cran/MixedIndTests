@@ -7,9 +7,9 @@
 Sn_A(x, trunc.level)
 }
 \arguments{
-\item{trunc.level}{Only subsets of cardinality <= trunc.level (default=2) are considered for the Moebius statistics.}
+\item{x}{Matrix of observations.}
 
-\item{data}{Matrix of observations.}
+\item{trunc.level}{Only subsets of cardinality <= trunc.level (default=2) are considered for the Moebius statistics.}
 }
 \value{
 \item{stats}{Cramer-von Mises Moebius statistics}
@@ -25,7 +25,7 @@ Sn_A(x, trunc.level)
 \item{J}{Matrix for multipliers bootstrap for Sn}
 }
 \description{
-This function he Moebius Cramer-von Mises statistics for a tests of randomnes for observations X(1), ...l, X(p).
+This function computes Moebius Cramer-von Mises statistics for a tests of independence for matrix of data x.
 }
 \references{
 Genest, Neslehova, Remillard & Murphy (2019). Testing for independence in arbitrary distributions

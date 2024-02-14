@@ -1,8 +1,8 @@
 #'@title Computes the Moebius Cramer-von Mises statistics for the test of independence between random variables
 #'
-#'@description This function he Moebius Cramer-von Mises statistics for a tests of randomnes for observations X(1), ...l, X(p).
+#'@description This function computes Moebius Cramer-von Mises statistics for a tests of independence for matrix of data x.
 #'
-#'@param data         Matrix of observations.
+#'@param x         Matrix of observations.
 #'@param trunc.level  Only subsets of cardinality <= trunc.level (default=2) are considered for the Moebius statistics.
 #
 #'

@@ -30,5 +30,5 @@ x <- matrix(rnorm(250),ncol=5)
 out <-EstDepMoebius(x,3)
 }
 \references{
-B.R Nasri & B.N. Remillard (2022). Copula-based dependence measures for arbitrary data
+B.R Nasri & B.N. Remillard (2023). Tests of independence and randomness for arbitrary data using copula-based covariances
 }

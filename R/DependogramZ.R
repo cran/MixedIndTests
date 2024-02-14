@@ -6,7 +6,7 @@
 #'@param n        Number of observations
 #'
 #'
-#'@references Nasri & Remillard (2022). Copula-based dependence measures for arbitrary data.
+#'@references Nasri & Remillard (2023). Tests of independence and randomness for arbitrary data using copula-based covariances
 #'@examples
 #' x <- matrix(rnorm(250),ncol=5)
 #' out <-EstDepMoebius(x)

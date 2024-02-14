@@ -15,7 +15,7 @@ Sn_serial(x, p)
 \item{stats}{Cramer-von Mises statistics Sn}
 }
 \description{
-This function computes the Cramer-von Mises statistic for a tests of randomness for p consectives values X(1), ..., X(p). Usefull for traditionall bootstrapping.
+This function computes the Cramer-von Mises statistic for a tests of randomness for p consecutives values X(1), ..., X(p). Useful for traditional bootstrapping.
 }
 \references{
 B.R Nasri (2022). Tests of serial dependence for arbitrary distributions

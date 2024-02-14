@@ -2,10 +2,10 @@
 #'
 #'@description This function simulates a Markovian time series (p-Markov for the Farlie-Gumbel-Morgenstern copula) with uniform margins using a copula family for the joint distribution of U[t], U[t-1].
 #'
-#'@param family  "ind", "tent", "gaussian" , "t" , "clayton", "fgm", "frank", "gumbel", joe" , "plackett"
+#'@param family  "ind", "tent", "gaussian", "t" , "clayton", "fgm", "frank", "gumbel", joe" , "plackett"
 #'@param n       length of the time series
 #'@param tau     Kendall's tau of the copula family
-#'@param param   extra copula parameter: for "fgm",  param in {2,3,...} is the dimension of the copula; for "t", param = nu
+#'@param param   extra copula parameter: for "fgm",  param is the dimension of the copula; for "t", param = nu
 #'
 #'@return \item{U}{Simulated time series}
 #'

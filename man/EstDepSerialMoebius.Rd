@@ -32,5 +32,5 @@ y<- SimAR1Poisson(c(5,0.2),100)
 out <- EstDepSerialMoebius(y,4,4)
 }
 \references{
-B.R Nasri & B.N. Remillard (2022). Copula-based dependence measures for arbitrary data
+B.R Nasri & B.N. Remillard (2023). Tests of independence and randomness for arbitrary data using copula-based covariances
 }
